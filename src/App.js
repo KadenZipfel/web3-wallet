@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Web3 from 'web3';
 import Web3Connect from 'web3connect';
 import WalletConnectProvider from '@walletconnect/web3-provider';
+import Portis from '@portis/web3';
 
 import keys from './keys';
 
@@ -12,6 +13,12 @@ const providerOptions = {
     package: WalletConnectProvider,
     options: {
       infuraId: keys.infura
+    }
+  },
+  portis: {
+    package: Portis,
+    options: {
+      id: keys.portis
     }
   }
 };
