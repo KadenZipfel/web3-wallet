@@ -4,6 +4,7 @@ import Web3Connect from 'web3connect';
 import WalletConnectProvider from '@walletconnect/web3-provider';
 import Portis from '@portis/web3';
 import Fortmatic from 'fortmatic';
+import Torus from '@toruslabs/torus-embed';
 
 import keys from './keys';
 
@@ -26,6 +27,18 @@ const providerOptions = {
     package: Fortmatic,
     options: {
       key: keys.fortmatic
+    }
+  },
+  torus: {
+    package: Torus,
+    options: {
+      enableLogging: false,
+      buttonPosition: "bottom-left",
+      buildEnv: "production",
+      showTorusButton: true,
+      enabledVerifiers: {
+        google: false
+      }
     }
   }
 };
