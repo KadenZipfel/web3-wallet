@@ -5,6 +5,7 @@ import WalletConnectProvider from '@walletconnect/web3-provider';
 import Portis from '@portis/web3';
 import Fortmatic from 'fortmatic';
 import Torus from '@toruslabs/torus-embed';
+import Authereum from 'authereum';
 
 import keys from './keys';
 
@@ -40,6 +41,10 @@ const providerOptions = {
         google: false
       }
     }
+  },
+  authereum: {
+    package: Authereum,
+    options: {}
   }
 };
 
