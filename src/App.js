@@ -112,17 +112,23 @@ class App extends Component {
       await web3.currentProvider.close()
     }
     await this.web3Connect.clearCachedProvider();
+    this.setState({connected: false, address: null});
   }
 
   render() {
+    let buttonText;
+
+    if(this.state.address) {
+      buttonText = `${this.state.address.slice(0, 4)}...${this.state.address.slice(this.state.address.length - 4, this.state.address.length)}`
+    } else {
+      buttonText = 'Connect Wallet'
+    }
+
     return (
-      <div>
+      <div className="app">
         <h1>Wallet Connect</h1>
-        <button onClick={this.disconnect}>
-          Disconnect
-        </button>
-        <button onClick={this.onConnect}>
-          Connect
+        <button onClick={this.state.connected ? this.disconnect : this.onConnect}>
+          {buttonText}
         </button>
       </div>
     );
