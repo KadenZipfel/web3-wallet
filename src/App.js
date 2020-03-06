@@ -10,6 +10,7 @@ import Authereum from 'authereum';
 import keys from './keys';
 
 import './layout/config/_base.sass';
+import './layout/components/button.sass';
 
 const providerOptions = {
   walletconnect: {
@@ -158,8 +159,10 @@ class App extends Component {
 
     return (
       <div className="app">
-        <h1>Wallet Connect</h1>
-        <button onClick={this.state.connected ? this.disconnect : this.onConnect}>
+        <button 
+          onClick={this.state.connected ? this.disconnect : this.onConnect}
+          className="button"  
+        >
           {buttonText}
         </button>
       </div>
